@@ -12,3 +12,4 @@ services:
       - "3306:3306"
     volumes:
       - ./assets/ScriptDB.sql:/docker-entrypoint-initdb.d/ScriptDB.sql
+    restart: always
