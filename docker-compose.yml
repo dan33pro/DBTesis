@@ -13,3 +13,9 @@ services:
     volumes:
       - ./assets/ScriptDB.sql:/docker-entrypoint-initdb.d/ScriptDB.sql
     restart: always
+    networks:
+      - mis_contenedores
+
+networks:
+  mis_contenedores:
+    external: true
