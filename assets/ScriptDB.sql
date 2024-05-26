@@ -130,7 +130,7 @@ ALTER TABLE Noticias ADD FOREIGN KEY (cc_administrador) REFERENCES Usuarios (ced
 ALTER TABLE Imagenes ADD FOREIGN KEY (id_noticia) REFERENCES Noticias (id_noticia) ON DELETE CASCADE;
 ALTER TABLE Respuestas ADD FOREIGN KEY (cc_administrador) REFERENCES Usuarios (cedula) ON DELETE CASCADE;
 CREATE INDEX idx_id_peticion_respuestas ON Respuestas (id_peticion);
-ALTER TABLE Peticiones DROP FOREIGN KEY Peticiones_ibfk_1;
+-- ALTER TABLE Peticiones DROP FOREIGN KEY Peticiones_ibfk_1;
 ALTER TABLE Peticiones ADD FOREIGN KEY (id_peticion) REFERENCES Respuestas (id_peticion) ON DELETE CASCADE;
 ALTER TABLE Peticiones ADD FOREIGN KEY (id_tipo_peticion) REFERENCES TiposPeticion (id_tipo_peticion);
 ALTER TABLE Peticiones ADD FOREIGN KEY (cc_ciudadano) REFERENCES Usuarios (cedula) ON DELETE CASCADE;
@@ -177,10 +177,10 @@ INSERT INTO TiposParadasRutas  (id_tipo_parada_ruta, descripcion) VALUES(null, "
 
 
 -- Otros:
-ALTER TABLE Usuarios ADD CONSTRAINT unique_correo UNIQUE (correoElectronico);
+-- ALTER TABLE Usuarios ADD CONSTRAINT unique_correo UNIQUE (correoElectronico);
 ALTER TABLE Peticiones DROP FOREIGN KEY Peticiones_ibfk_1;
 
 ALTER TABLE Paraderos
 ADD CONSTRAINT nombre_paradero_unico UNIQUE (nombre_paradero);
-ALTER TABLE Rutas 
+ALTER TABLE Rutas
 ADD CONSTRAINT nombre_ruta_unico UNIQUE (nombre_ruta);
